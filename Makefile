@@ -65,7 +65,7 @@ aws-test: ## run test that requires AWS credentials
        python3 -m pytest -v -m "aws" tests/; \
     )
 
-static: shellcheck black pylint unit-test ## run all static checks
+static: shellcheck black pylint ## run all static checks
 
 clean-cache: ## clean python adn pytest cache data
 	@find . -type f -name "*.py[co]" -delete -not -path "./.venv/*"

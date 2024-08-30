@@ -3,6 +3,7 @@
 """
 import boto3
 
+
 def get_sts_identity():
     """
     Returns the identity details of the AWS account and IAM user or role
@@ -11,6 +12,10 @@ def get_sts_identity():
     Returns:
     - dict: A dictionary containing Account, Arn, and UserId.
     """
-    sts_client = boto3.client('sts')
+    sts_client = boto3.client("sts")
     identity = sts_client.get_caller_identity()
     return identity
+
+
+if __name__ == "__main__":
+    print(get_sts_identity())
